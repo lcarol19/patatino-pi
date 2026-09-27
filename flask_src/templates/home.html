@@ -77,7 +77,7 @@
 
     <!-- Total encontrado — aria-live anuncia mudanças para leitores de tela -->
     <p class="text-muted small mb-3" aria-live="polite" aria-atomic="true">
-        {{ total }} animal{{ 'is' if total != 1 else '' }} encontrado{{ 's' if total != 1 else '' }}
+        {{ total }} animal{{ 'animais' if total != 1 else 'animal' }} encontrado{{ 's' if total != 1 else '' }}
     </p>
 
     {% if animais %}
