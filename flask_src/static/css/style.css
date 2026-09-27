@@ -1,0 +1,218 @@
+/* =========================================
+   patatino-pi — Estilo simples com cores Cafofe
+   Mobile-first | WCAG 2.1 AA
+   ========================================= */
+
+/* Variáveis de cor */
+:root {
+    --laranja: #f28b00;
+    --escuro:  #1a1a1a;
+    --cinza:   #f5f5f5;
+    --texto:   #333;
+}
+
+/* Base */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: var(--texto);
+    background: var(--cinza);
+    margin: 0;
+}
+
+/* Skip link — acessibilidade: pula para o conteúdo */
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    background: var(--laranja);
+    color: #fff;
+    padding: 8px 16px;
+    font-weight: bold;
+    z-index: 9999;
+    text-decoration: none;
+}
+.skip-link:focus { top: 0; }
+
+/* Foco visível — acessibilidade: navegação por teclado */
+:focus-visible {
+    outline: 3px solid var(--laranja);
+    outline-offset: 2px;
+}
+
+/* Respeita preferência do usuário por menos movimento */
+@media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+}
+
+/* Navbar */
+.navbar { border-bottom: 3px solid var(--laranja); }
+.navbar-brand img { height: 48px; }
+.nav-link { color: var(--escuro) !important; font-weight: bold; }
+.nav-link:hover, .nav-link.active { color: var(--laranja) !important; }
+
+/* Botão principal */
+.btn-cafofe {
+    background: var(--laranja);
+    color: #fff;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    min-height: 44px; /* toque mínimo — acessibilidade */
+    min-width: 44px;
+}
+.btn-cafofe:hover { background: #d47800; color: #fff; }
+
+/* Header laranja */
+.header-pagina {
+    background: var(--laranja);
+    color: #fff;
+    padding: 20px 0;
+    margin-bottom: 24px;
+}
+.header-pagina h1 { margin: 0; font-size: 1.6rem; }
+
+/* Cards dos animais */
+.card-animal {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    overflow: hidden;
+}
+.card-animal img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+.card-animal .sem-foto {
+    width: 100%;
+    height: 180px;
+    background: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+}
+.card-animal .card-body { padding: 12px; }
+.card-animal .card-body h3 { font-size: 1rem; margin: 0 0 4px; }
+.card-animal .card-body p { font-size: .85rem; color: #666; margin: 0 0 8px; }
+.card-animal .card-footer {
+    padding: 8px 12px;
+    background: #f9f9f9;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Badge espécie */
+.badge-especie {
+    background: var(--laranja);
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: .75rem;
+    font-weight: bold;
+}
+
+/* Formulários */
+.form-box {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.form-label { font-weight: bold; }
+.form-control:focus, .form-select:focus {
+    border-color: var(--laranja);
+    box-shadow: 0 0 0 2px rgba(242,139,0,.2);
+}
+
+/* Filtros */
+.filtros-bar {
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 12px 0;
+    margin-bottom: 20px;
+}
+
+/* Paginação */
+.page-link { color: var(--laranja); min-height: 44px; min-width: 44px; display: flex; align-items: center; justify-content: center; }
+.page-item.active .page-link { background: var(--laranja); border-color: var(--laranja); }
+
+/* Seção CTA */
+.cta-bar {
+    background: var(--laranja);
+    color: #fff;
+    padding: 24px 0;
+    text-align: center;
+    margin-top: 32px;
+}
+.cta-bar h2 { margin: 0 0 12px; }
+
+/* Footer */
+footer {
+    background: var(--escuro);
+    color: #bbb;
+    padding: 20px 0;
+    margin-top: 32px;
+    font-size: .9rem;
+}
+footer a { color: #bbb; text-decoration: none; }
+footer a:hover { color: var(--laranja); }
+.footer-copy { color: #666; font-size: .8rem; text-align: center; margin-top: 12px; }
+
+/* Links sociais */
+.social-link {
+    color: #bbb;
+    font-size: 1.2rem;
+    margin-right: 8px;
+    min-width: 44px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.social-link:hover { color: var(--laranja); }
+
+/* Detalhe do animal */
+.detalhe-box {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
+}
+.info-linha { margin-bottom: 8px; }
+.info-linha strong { color: #555; }
+
+/* Foto preview */
+.foto-preview {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+.foto-remove-btn {
+    position: absolute;
+    top: 4px; right: 4px;
+    background: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 26px; height: 26px;
+    cursor: pointer;
+    font-size: .75rem;
+}
+
+/* Confirmação */
+.confirmacao-box {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 32px;
+    text-align: center;
+}
